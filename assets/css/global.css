@@ -1,0 +1,21 @@
+body {
+    font-size: var(--font-size-400);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-normal);
+}
+
+input,
+button {
+    cursor: pointer;
+}
+
+
+@supports(height: 100dvh) {
+    main {
+        height: 100dvh;
+    }
+}
+
+main {
+    height: 100vh;
+}
