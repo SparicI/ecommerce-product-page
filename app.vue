@@ -30,7 +30,7 @@
           <button>0</button>
           <button>
             <img
-              src="../images/icon-cart.svg"
+              src="/images/icon-cart.svg"
               alt="Add to cart"
             >
             Add to cart

@@ -13,14 +13,14 @@
             >
 
                 <img
-                    src="../images/icon-menu.svg"
+                    src="/images/icon-menu.svg"
                     alt="Open menu button"
                 >
             </button>
 
             <!-- Logo -->
             <img
-                src="../images/logo.svg"
+                src="/images/logo.svg"
                 alt="Open menu button"
             >
             <!-- Navigation -->
@@ -45,14 +45,14 @@
             <!-- Add to Cart button -->
             <button>
                 <img
-                    src="../images/icon-cart.svg"
+                    src="/images/icon-cart.svg"
                     alt="Add to cart"
                 >
             </button>
 
             <!-- Profile avatar -->
             <img
-                src="../images/image-avatar.png"
+                src="/images/image-avatar.png"
                 alt="Profile avatar"
                 class="header__avatar"
             >
