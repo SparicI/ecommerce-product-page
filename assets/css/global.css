@@ -9,6 +9,11 @@ button {
     cursor: pointer;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 
 @supports(height: 100dvh) {
     main {
