@@ -10,6 +10,7 @@
                 aria-controls="main-nav"
                 aria-expanded="false"
                 class="hamburger-bar"
+                @click="openMenu"
             >
 
                 <img
@@ -24,19 +25,48 @@
                 alt="Open menu button"
             >
             <!-- Navigation -->
-            <nav
-                class="nav"
-                id="main-nav"
-                aria-label="Main navigation"
+            <div
+                class="nav-container"
+                :class="{ 'open': isMenuOpen }"
             >
-                <ul>
-                    <li><a href="#">Collections</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+                <nav
+                    class="nav"
+                    id="main-nav"
+                    aria-label="Main navigation"
+                >
+                    <button @click="closeMenu">
+                        <img
+                            src="/images/icon-close.svg"
+                            alt="Close menu"
+                            class="nav__close-btn"
+                        >
+                    </button>
+                    <ul class="nav__list">
+                        <li><a
+                                href="#"
+                                class="nav__link"
+                            >Collections</a></li>
+                        <li><a
+                                href="#"
+                                class="nav__link"
+                            >Men</a></li>
+                        <li><a
+                                href="#"
+                                class="nav__link"
+                            >Women</a></li>
+                        <li><a
+                                href="#"
+                                class="nav__link"
+                            >About</a></li>
+                        <li><a
+                                href="#"
+                                class="nav__link"
+                            >Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
 
         </div>
 
@@ -61,20 +91,71 @@
     </header>
 </template>
 
-<script>
+<script setup>
+
+let isMenuOpen = ref(false)
+
+// open and close menu for small resolutions
+const openMenu = () => isMenuOpen.value = true
+const closeMenu = () => isMenuOpen.value = false
 </script>
 
 <style scoped>
-.nav {
-    display: none;
-}
-
 .header__avatar {
     width: 55px;
-    padding: 1rem;
+    padding: var(--spacing-400);
 }
 
 .hamburger-bar {
-    padding: 1rem
+    display: none;
+}
+
+.nav__close-btn {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .hamburger-bar {
+        display: block;
+        padding: var(--spacing-400);
+    }
+
+    .nav-container {
+        display: none;
+        position: fixed;
+        inset: 0;
+    }
+
+    .nav-container.open {
+        display: block;
+        background-color: var(--background);
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 70vw;
+
+        background-color: var(--white);
+    }
+
+    .nav__close-btn {
+        display: block;
+        padding: var(--spacing-600);
+    }
+
+    .nav__link {
+        display: inline-block;
+        padding-inline: var(--spacing-600);
+        padding-block: var(--spacing-200);
+        color: var(--very-dark-blue);
+        font-weight: var(--font-weight-bold);
+    }
+
 }
 </style>
