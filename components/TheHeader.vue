@@ -96,7 +96,10 @@
 let isMenuOpen = ref(false)
 
 // open and close menu for small resolutions
-const openMenu = () => isMenuOpen.value = true
+const openMenu = () => {
+    console.log("clicked")
+    isMenuOpen.value = true
+}
 const closeMenu = () => isMenuOpen.value = false
 </script>
 
