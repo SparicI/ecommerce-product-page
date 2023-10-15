@@ -7,6 +7,30 @@
     justify-content: space-between;
 }
 
+.gap-400 {
+    gap: var(--spacing-400)
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.padding-block-end-200 {
+    padding-block-end: var(--spacing-200);
+}
+
+.padding-inline-400 {
+    padding-inline: var(--spacing-400);
+}
+
+.padding-block-400 {
+    padding-block: var(--spacing-400);
+}
+
+.font-weight-bold {
+    font-weight: var(--font-weight-bold);
+}
+
 
 /* Hide from screen */
 .visually-hidden {

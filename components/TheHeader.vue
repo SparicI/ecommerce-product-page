@@ -1,6 +1,6 @@
 
 <template>
-    <header class="flex justify-content-space-between">
+    <header class="header flex justify-content-space-between padding-block-end-200">
         <!-- Header - LEFT -->
         <div class="flex">
             <!-- Hamburger -->
@@ -104,6 +104,13 @@ const closeMenu = () => isMenuOpen.value = false
 </script>
 
 <style scoped>
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--white);
+}
+
 .header__avatar {
     width: 55px;
     padding: var(--spacing-400);

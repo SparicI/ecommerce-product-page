@@ -25,6 +25,7 @@
     --font-size-500: 18px;
     --font-size-600: 20px;
     --font-size-700: 22px;
+    --font-size-800: 24px;
 
     --font-family: 'Kumbh Sans', sans-serif;
 
@@ -46,7 +47,7 @@
     --spacing-1000: 3.5rem;
 
     /* Other */
-    --border-radius-soft: 10px;
+    --border-radius-soft: 5px;
 
     --box-shadow: 2px 2px 8px rgba(0 0 0 / 0.2);
 

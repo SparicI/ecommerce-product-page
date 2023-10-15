@@ -4,40 +4,134 @@
 
     <main>
       <!-- Product Gallery -->
-      <div>
-        <!-- Main image -->
-        <div></div>
-        <!-- Thumbnails -->
-        <div></div>
+      <div class="gallery">
+
+        <div class="gallery__container">
+          <!-- Large image gallery -->
+          <div class="gallery__large">
+            <img
+              class="gallery__large-image"
+              src="/images/image-product-1.jpg"
+              alt="Two beige sneakers"
+            >
+            <img
+              class="gallery__large-image"
+              src="/images/image-product-2.jpg"
+              alt="Two beige sneakers, one sneaker on a rock"
+            >
+            <img
+              class="gallery__large-image"
+              src="/images/image-product-3.jpg"
+              alt="One beige sneaker on a two rocks"
+            >
+            <img
+              class="gallery__large-image"
+              src="/images/image-product-4.jpg"
+              alt="One beige sneaker on a two rocks"
+            >
+
+          </div>
+          <div class="gallery__btns">
+            <button
+              type="button"
+              class="button-gallery button-gallery--previous"
+            >
+              <img
+                src="/images/icon-previous.svg"
+                alt="Button for previous images"
+              >
+            </button>
+            <button
+              type="button"
+              class="button-gallery button-gallery--next"
+            >
+              <img
+                src="/images/icon-next.svg"
+                alt="Button for next images"
+              >
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Thumbnails  -->
+        <!-- TODO: Hide on mobile devices -->
+        <div class="gallery__small">
+          <img
+            src="/images/image-product-1-thumbnail.jpg"
+            alt="Two beige sneakers"
+          >
+          <img
+            src="/images/image-product-2-thumbnail.jpg"
+            alt="Two beige sneakers, one sneaker on a rock"
+          >
+          <img
+            src="/images/image-product-3-thumbnail.jpg"
+            alt="One beige sneaker on a two rocks"
+          >
+          <img
+            src="/images/image-product-4-thumbnail.jpg"
+            alt="One beige sneaker on a two rocks"
+          >
+
+        </div>
       </div>
 
-      <!-- Product Description -->
-      <div>
-        <p>Sneaker company</p>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
-          they’ll withstand everything the weather can offer. </p>
-        <!-- Price wrapper -->
-        <div>
-          <div>
-            <p>$125.00</p>
-            <p>50%</p>
-          </div>
-          <p>$250.00</p>
-        </div>
-        <!-- Button wrapper -->
-        <div>
-          <button>0</button>
-          <button>
-            <img
-              src="/images/icon-cart.svg"
-              alt="Add to cart"
-            >
-            Add to cart
-          </button>
-        </div>
-      </div>
+      <ProductDetails />
+
+
     </main>
 
   </div>
 </template>
+
+<style scoped>
+@media screen and (min-width: 400px and max-width: 768px) {
+  .gallery__large-image {
+    aspect-ratio: 21 / 10;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .gallery__container {
+    position: relative;
+  }
+
+  .gallery__large {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .gallery__large-image {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .gallery__small {
+    display: none;
+  }
+
+  .gallery__btns {
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .button-gallery {
+    display: grid;
+    place-items: center;
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--white);
+    border: none;
+
+  }
+
+}
+</style>
