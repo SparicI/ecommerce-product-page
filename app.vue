@@ -2,11 +2,16 @@
   <div>
     <TheHeader />
 
-    <main>
+    <main class="main-container">
       <!-- Product Gallery -->
       <div class="gallery">
 
         <div class="gallery__container">
+          <img
+            class="gallery__ld-image"
+            src="/images/image-product-1.jpg"
+            alt="Two beige sneakers"
+          >
           <!-- Large image gallery -->
           <div class="gallery__large">
             <img
@@ -86,13 +91,6 @@
 </template>
 
 <style scoped>
-@media screen and (min-width: 400px and max-width: 768px) {
-  .gallery__large-image {
-    aspect-ratio: 21 / 10;
-  }
-
-}
-
 @media screen and (max-width: 768px) {
 
   .gallery__container {
@@ -107,6 +105,10 @@
   .gallery__large-image {
     max-height: 400px;
     object-fit: cover;
+  }
+
+  .gallery__ld-image {
+    display: none;
   }
 
   .gallery__small {
@@ -130,6 +132,68 @@
     border-radius: 50%;
     background: var(--white);
     border: none;
+
+  }
+
+
+
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .gallery__large-image {
+    aspect-ratio: 3 / 2;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .gallery__large-image {
+    aspect-ratio: 3 / 1.5;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+  img {
+    border-radius: 10px;
+  }
+
+  .main-container {
+    display: flex;
+    gap: 5rem;
+    padding: 3rem;
+    padding-block-start: 12rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery__container {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+
+  .gallery__large,
+  .gallery__btns {
+    display: none;
+  }
+
+  .gallery__ld-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery__small {
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: var(--spacing-600);
+
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
 
   }
 

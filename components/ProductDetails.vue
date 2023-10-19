@@ -1,13 +1,13 @@
 
 <template>
-    <div class="padding-inline-400">
+    <div class="padding-inline-400 padding-block-end-200">
         <p class="product__subheading">Sneaker company</p>
         <h1 class="product__heading">Fall Limited Edition <br>Sneakers</h1>
         <p class="product__description">These low-profile sneakers are your perfect casual wear companion. Featuring a
             durable rubber outer sole,
             they’ll withstand everything the weather can offer. </p>
         <!-- Price wrapper -->
-        <div class="flex padding-block-400 font-weight-bold">
+        <div class="flex padding-block-400 font-weight-bold product__discont-section">
             <div class="flex gap-400 flex-1">
                 <p class="product__discount-price">$125.00</p>
                 <p class="product__discount">50%</p>
@@ -15,7 +15,7 @@
             <p class="product__price">$250.00</p>
         </div>
         <!-- Button wrapper -->
-        <div>
+        <div class="product__controls">
             <div class="product__quantity-container">
                 <button type="button">
                     <img
@@ -111,5 +111,20 @@
     background-color: var(--orange);
     color: var(--white);
     font-weight: var(--font-weight-bold);
+}
+
+@media screen and (min-width: 768px) {
+    .product__discont-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product__controls {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: var(--spacing-400);
+    }
+
 }
 </style>

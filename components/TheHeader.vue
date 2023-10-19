@@ -34,14 +34,16 @@
                     id="main-nav"
                     aria-label="Main navigation"
                 >
-                    <button @click="closeMenu">
+                    <button
+                        @click="closeMenu"
+                        class="nav__close-btn"
+                    >
                         <img
                             src="/images/icon-close.svg"
                             alt="Close menu"
-                            class="nav__close-btn"
                         >
                     </button>
-                    <ul class="nav__list">
+                    <ul class="nav__list margin-inline-start-600">
                         <li><a
                                 href="#"
                                 class="nav__link"
@@ -73,7 +75,7 @@
         <!-- Header - RIGHT -->
         <div class="flex">
             <!-- Add to Cart button -->
-            <button>
+            <button class="header__add-to-cart-btn">
                 <img
                     src="/images/icon-cart.svg"
                     alt="Add to cart"
@@ -108,13 +110,11 @@ const closeMenu = () => isMenuOpen.value = false
     position: fixed;
     z-index: 100;
     width: 100%;
+    max-width: 1024px;
     background-color: var(--white);
 }
 
-.header__avatar {
-    width: 55px;
-    padding: var(--spacing-400);
-}
+
 
 .hamburger-bar {
     display: none;
@@ -125,8 +125,12 @@ const closeMenu = () => isMenuOpen.value = false
 }
 
 
-
 @media screen and (max-width: 768px) {
+
+    .header__avatar {
+        width: 55px;
+        padding: var(--spacing-400);
+    }
 
     .hamburger-bar {
         display: block;
@@ -165,6 +169,33 @@ const closeMenu = () => isMenuOpen.value = false
         padding-block: var(--spacing-200);
         color: var(--very-dark-blue);
         font-weight: var(--font-weight-bold);
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+
+    .header {
+        padding-block: var(--spacing-600);
+        border-bottom: 1px solid #ebedf2;
+    }
+
+    .header__avatar {
+        width: 75px;
+        padding: var(--spacing-400);
+    }
+
+    .nav__list {
+        display: flex;
+        gap: var(--spacing-600)
+    }
+
+    .nav__link {
+        color: var(--dark-grayish-blue);
+    }
+
+    .header__add-to-cart-btn {
+        padding: var(--spacing-400);
     }
 
 }
