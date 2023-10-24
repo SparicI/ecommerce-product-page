@@ -2,7 +2,8 @@
 <template>
     <header class="header flex justify-content-space-between">
         <!-- Header - LEFT -->
-        <div class="flex align-self-flex-end">
+        <div class="flex">
+
             <!-- Hamburger -->
             <button
                 type="button"
@@ -24,6 +25,7 @@
                 src="/images/logo.svg"
                 alt="Open menu button"
             >
+
             <!-- Navigation -->
             <div
                 class="nav-container"
@@ -38,19 +40,15 @@
         <!-- Header - RIGHT -->
         <div class="flex">
             <!-- Add to Cart button -->
-            <button class="header__add-to-cart-btn">
+            <button class="add-to-cart-btn">
                 <img
                     src="/images/icon-cart.svg"
                     alt="Add to cart"
                 >
             </button>
 
-            <!-- Profile avatar -->
-            <img
-                src="/images/image-avatar.png"
-                alt="Profile avatar"
-                class="header__avatar"
-            >
+            <BaseAvatar />
+
         </div>
 
     </header>
@@ -92,14 +90,13 @@ const closeMenu = () => isMenuOpen.value = false
         background-color: var(--background);
     }
 
-    .header__avatar {
-        width: 55px;
-        padding: var(--spacing-400);
-    }
-
     .hamburger-bar {
         display: block;
         padding: var(--spacing-400);
+    }
+
+    .add-to-cart-btn {
+        margin-inline-end: var(--spacing-400);
     }
 
 }
@@ -109,13 +106,9 @@ const closeMenu = () => isMenuOpen.value = false
         border-bottom: 1px solid #ebedf2;
     }
 
-    .header__avatar {
-        width: 75px;
+    .add-to-cart-btn {
         padding: var(--spacing-400);
-    }
-
-    .header__add-to-cart-btn {
-        padding: var(--spacing-400);
+        margin-inline-end: var(--spacing-800);
     }
 
 }

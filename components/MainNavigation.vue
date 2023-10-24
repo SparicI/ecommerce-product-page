@@ -84,14 +84,14 @@
 
     .nav__link {
         color: var(--dark-grayish-blue);
-        padding-block: var(--spacing-600);
+        padding-block: var(--spacing-800);
         display: inline-block;
     }
 
     .nav__link:hover {
         color: var(--very-dark-blue);
-        padding-block-end: 21px;
-        padding-block-start: var(--spacing-600);
+        padding-block-end: 29px;
+        padding-block-start: var(--spacing-800);
         border-bottom: 3px solid var(--orange);
     }
 
