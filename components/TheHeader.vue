@@ -38,14 +38,19 @@
         </div>
 
         <!-- Header - RIGHT -->
-        <div class="flex">
+        <div class="flex position-relative">
             <!-- Add to Cart button -->
-            <button class="add-to-cart-btn">
+            <button
+                class="add-to-cart-btn"
+                @mouseover="isCartOpen = true"
+                @mouseleave="isCartOpen = false"
+            >
                 <img
                     src="/images/icon-cart.svg"
                     alt="Add to cart"
                 >
             </button>
+            <BaseCart :is-cart-open="isCartOpen" />
 
             <BaseAvatar />
 
@@ -56,11 +61,15 @@
 
 <script setup>
 
+// -------------- Menu ------------------
 let isMenuOpen = ref(false)
 
-// open and close menu for small resolutions
 const openMenu = () => isMenuOpen.value = true
 const closeMenu = () => isMenuOpen.value = false
+
+// ------------- Cart modal -------------------
+let isCartOpen = ref(false)
+
 
 </script>
 
