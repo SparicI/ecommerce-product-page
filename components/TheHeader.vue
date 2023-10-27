@@ -38,7 +38,7 @@
         </div>
 
         <!-- Header - RIGHT -->
-        <div class="flex position-relative">
+        <div class="flex position-relative align-self-center">
             <!-- Add to Cart button -->
             <button
                 class="add-to-cart-btn"
@@ -116,7 +116,7 @@ let isCartOpen = ref(false)
     }
 
     .add-to-cart-btn {
-        padding: var(--spacing-400);
+        padding: var(--spacing-800) var(--spacing-400);
         margin-inline-end: var(--spacing-800);
     }
 

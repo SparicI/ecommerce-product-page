@@ -1,6 +1,8 @@
 <template>
     <dialog
         :open="isCartOpen"
+        @mouseover="isCartOpen = true"
+        @mouseleave="isCartOpen = false"
         ref="cartModal"
         class="cart"
     >
@@ -77,7 +79,7 @@ const totalPrice = computed(() => {
     z-index: 1000;
     right: 0;
     left: -220px;
-    top: 65px;
+    top: 85px;
     width: 360px;
     height: 260px;
     border: none;
