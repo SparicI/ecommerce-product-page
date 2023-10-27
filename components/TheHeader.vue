@@ -49,6 +49,12 @@
                     src="/images/icon-cart.svg"
                     alt="Add to cart"
                 >
+                <p
+                    class="quantity"
+                    v-if="quantity !== 0 && cartHasItems"
+                >
+                    {{ quantity }}
+                </p>
             </button>
             <BaseCart :is-cart-open="isCartOpen" />
 
@@ -69,6 +75,8 @@ const closeMenu = () => isMenuOpen.value = false
 
 // ------------- Cart modal -------------------
 let isCartOpen = ref(false)
+const quantity = useState('quantityState', () => 0)
+const cartHasItems = useState('cartFull', () => false)
 
 
 </script>
@@ -84,6 +92,18 @@ let isCartOpen = ref(false)
 
 .hamburger-bar {
     display: none;
+}
+
+.quantity {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 20px;
+    border-radius: 100px;
+
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: var(--font-size-100);
 }
 
 @media screen and (max-width: 768px) {
