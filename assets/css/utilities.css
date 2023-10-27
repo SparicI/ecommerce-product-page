@@ -27,6 +27,14 @@
     margin-inline-start: var(--spacing-600);
 }
 
+.margin-inline-start-200 {
+    margin-inline-start: var(--spacing-200);
+}
+
+.margin-block-400 {
+    margin-block: var(--spacing-400);
+}
+
 .padding-block-end-200 {
     padding-block-end: var(--spacing-200);
 }
@@ -46,6 +54,16 @@
 .position-relative {
     position: relative;
 }
+
+.color-dark-blue {
+    color: var(--very-dark-blue);
+}
+
+.font-size-300 {
+    font-size: var(--font-size-300)
+}
+
+
 
 
 /* Hide from screen */

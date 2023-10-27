@@ -2,14 +2,14 @@
 <template>
     <div class="padding-inline-400 padding-block-end-200">
         <p class="product__subheading">Sneaker company</p>
-        <h1 class="product__heading">Fall Limited Edition <br>Sneakers</h1>
-        <p class="product__description">These low-profile sneakers are your perfect casual wear companion. Featuring a
+        <h1 class="product__heading color-dark-blue">Fall Limited Edition <br>Sneakers</h1>
+        <p class="font-size-300">These low-profile sneakers are your perfect casual wear companion. Featuring a
             durable rubber outer sole,
             they’ll withstand everything the weather can offer. </p>
         <!-- Price wrapper -->
         <div class="flex padding-block-400 font-weight-bold product__discont-section">
             <div class="flex gap-400 flex-1">
-                <p class="product__discount-price">$125.00</p>
+                <p class="product__discount-price color-dark-blue">$125.00</p>
                 <p class="product__discount">50%</p>
             </div>
             <p class="product__price">$250.00</p>
@@ -17,7 +17,10 @@
         <!-- Button wrapper -->
         <div class="product__controls">
             <div class="product__quantity-container">
-                <button type="button">
+                <button
+                    type="button"
+                    @click="decreaseQuantity"
+                >
                     <img
                         src="/images/icon-minus.svg"
                         alt="Remove one item from cart"
@@ -25,9 +28,12 @@
                 </button>
 
                 <p class="font-weight-bold">
-                    0
+                    {{ quantity }}
                 </p>
-                <button type="button">
+                <button
+                    type="button"
+                    @click="increaseQuantity"
+                >
                     <img
                         src="/images/icon-plus.svg"
                         alt="Add one item to cart"
@@ -35,7 +41,10 @@
                 </button>
 
             </div>
-            <button class="btn-add-to-cart">
+            <button
+                class="button-primary margin-block-400"
+                @click="addToCart"
+            >
                 <img
                     src="/images/icon-cart-white.svg"
                     alt="Add to cart"
@@ -47,7 +56,17 @@
 </template>
 
 <script setup>
+let quantity = useState('quantityState', () => 0)
+const decreaseQuantity = () => {
+    if (quantity.value > 0) {
+        quantity.value--
+    }
 
+}
+const increaseQuantity = () => quantity.value++
+
+let cartHasItems = useState('cartFull', () => false)
+const addToCart = () => cartHasItems.value = true
 
 </script>
 
@@ -66,10 +85,6 @@
     margin-block-end: 1rem;
 }
 
-.product__description {
-    color: var(--dark-grayish-blue);
-    font-size: var(--font-size-300);
-}
 
 .product__discount-price {
     font-size: var(--font-size-800);
@@ -80,7 +95,7 @@
     color: var(--orange);
     background-color: var(--pale-orange);
     padding-inline: var(--spacing-200);
-    border-radius: var(--border-radius-soft);
+    border-radius: var(--border-radius-soft-5);
 }
 
 .product__price {
@@ -96,22 +111,9 @@
     width: 100%;
     padding: var(--spacing-400);
     background-color: var(--light-grayish-blue);
-    border-radius: var(--border-radius-soft);
+    border-radius: var(--border-radius-soft-10);
 }
 
-.btn-add-to-cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-400);
-    width: 100%;
-    padding: var(--spacing-400);
-    margin-block: var(--spacing-400);
-    border-radius: var(--border-radius-soft);
-    background-color: var(--orange);
-    color: var(--white);
-    font-weight: var(--font-weight-bold);
-}
 
 @media screen and (min-width: 768px) {
     .product__discont-section {

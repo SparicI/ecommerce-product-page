@@ -1,0 +1,17 @@
+.button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-400);
+    width: 100%;
+    padding: var(--spacing-400);
+    border-radius: 10px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: var(--font-weight-bold);
+}
+
+.button-primary:hover {
+    background-color: var(--orange-active);
+    box-shadow: var(--box-shadow-orange);
+}

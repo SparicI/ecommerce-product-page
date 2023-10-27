@@ -2,6 +2,7 @@ body {
     font-size: var(--font-size-400);
     font-family: var(--font-family);
     font-weight: var(--font-weight-normal);
+    color: var(--dark-grayish-blue);
     max-width: 1024px;
     margin-inline: auto;
 }

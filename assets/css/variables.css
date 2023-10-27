@@ -5,6 +5,7 @@
     /* Primary */
 
     --orange: hsl(26, 100%, 55%);
+    --orange-active: hsl(25, 100%, 65%);
     --pale-orange: hsl(25, 100%, 94%);
 
     /* Neutral */
@@ -47,9 +48,11 @@
     --spacing-1000: 3.5rem;
 
     /* Other */
-    --border-radius-soft: 5px;
+    --border-radius-soft-5: 5px;
+    --border-radius-soft-10: 5px;
 
-    --box-shadow: 2px 12px 20px rgba(0 0 0 / 0.3);
+    --box-shadow-base: 2px 12px 20px rgba(0 0 0 / 0.3);
+    --box-shadow-orange: 2px 30px 20px var(--pale-orange);
 
 
     /* Layout - The designs were created to the following widths:
