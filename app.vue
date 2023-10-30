@@ -82,4 +82,11 @@ const closeGallery = () => lightboxGalleryIsOpen.value = false
   }
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+  .main-container {
+    gap: var(--spacing-400);
+  }
+
+}
 </style>

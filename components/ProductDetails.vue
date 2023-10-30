@@ -1,6 +1,6 @@
 
 <template>
-    <div class="padding-inline-400 padding-block-end-200">
+    <div class="padding-inline-400 padding-block-end-200 margin-block-start-800">
         <p class="product__subheading">Sneaker company</p>
         <h1 class="product__heading color-dark-blue">Fall Limited Edition <br>Sneakers</h1>
         <p class="font-size-300">These low-profile sneakers are your perfect casual wear companion. Featuring a
@@ -162,4 +162,5 @@ svg:hover use {
         gap: var(--spacing-400);
     }
 
-}</style>
+}
+</style>

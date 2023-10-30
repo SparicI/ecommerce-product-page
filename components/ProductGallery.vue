@@ -139,6 +139,7 @@ const showImage = (arg) => isImageDisplayed.value = arg
         object-fit: cover;
     }
 
+
     .gallery__small {
         display: none;
     }
@@ -185,8 +186,8 @@ const showImage = (arg) => isImageDisplayed.value = arg
 
     .gallery {
         display: grid;
-        grid-template-rows: 1fr 80px;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: min(420px, 100%) 82px;
+        grid-template-columns: repeat(4, 82px);
         gap: 1.5rem;
     }
 
@@ -208,6 +209,11 @@ const showImage = (arg) => isImageDisplayed.value = arg
         grid-column: 1 / 5;
         grid-row: 2 / 3;
 
+    }
+
+    .gallery__large {
+        height: 400px;
+        width: 400px;
     }
 
     .gallery__thumbnail-button {
