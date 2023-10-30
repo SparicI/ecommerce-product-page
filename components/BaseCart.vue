@@ -36,7 +36,10 @@
                             }}</span>
                         </p>
                     </div>
-                    <button aria-label="Delete item in cart">
+                    <button
+                        aria-label="Delete item in cart"
+                        @click="deleteCartItems"
+                    >
                         <img
                             src="/images/icon-delete.svg"
                             alt="Delete item in cart"
@@ -71,6 +74,11 @@ const cartHasItems = useState('cartFull', () => false)
 const totalPrice = computed(() => {
     return quantity.value * 125
 })
+
+const deleteCartItems = () => {
+    quantity.value = 0
+    cartHasItems.value = false
+}
 </script>
 
 <style socped>
@@ -95,7 +103,7 @@ const totalPrice = computed(() => {
 
 .cart__empty {
     display: grid;
-    height: calc(100% - 50px);
+    height: calc(100% - 80px);
     place-items: center;
     color: var(--dark-grayish-blue);
     font-weight: var(--font-weight-bold);
