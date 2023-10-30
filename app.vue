@@ -7,29 +7,28 @@
       <div class="gallery">
 
         <div class="gallery__container">
-          <img
-            class="gallery__ld-image"
-            src="/images/image-product-1.jpg"
-            alt="Two beige sneakers"
-          >
           <!-- Large image gallery -->
           <div class="gallery__large">
             <img
+              v-if="isImageDisplayed === 'one'"
               class="gallery__large-image"
               src="/images/image-product-1.jpg"
               alt="Two beige sneakers"
             >
             <img
+              v-if="isImageDisplayed === 'two'"
               class="gallery__large-image"
               src="/images/image-product-2.jpg"
               alt="Two beige sneakers, one sneaker on a rock"
             >
             <img
+              v-if="isImageDisplayed === 'three'"
               class="gallery__large-image"
               src="/images/image-product-3.jpg"
               alt="One beige sneaker on a two rocks"
             >
             <img
+              v-if="isImageDisplayed === 'four'"
               class="gallery__large-image"
               src="/images/image-product-4.jpg"
               alt="One beige sneaker on a two rocks"
@@ -61,25 +60,37 @@
 
         <!-- Thumbnails  -->
         <div class="gallery__small">
-          <button class="gallery__thumbnail-button">
+          <button
+            class="gallery__thumbnail-button"
+            @click="showImage('one')"
+          >
             <img
               src="/images/image-product-1-thumbnail.jpg"
               alt="Two beige sneakers"
             >
           </button>
-          <button class="gallery__thumbnail-button">
+          <button
+            class="gallery__thumbnail-button"
+            @click="showImage('two')"
+          >
             <img
               src="/images/image-product-2-thumbnail.jpg"
               alt="Two beige sneakers, one sneaker on a rock"
             >
           </button>
-          <button class="gallery__thumbnail-button">
+          <button
+            class="gallery__thumbnail-button"
+            @click="showImage('three')"
+          >
             <img
               src="/images/image-product-3-thumbnail.jpg"
               alt="One beige sneaker on a two rocks"
             >
           </button>
-          <button class="gallery__thumbnail-button">
+          <button
+            class="gallery__thumbnail-button"
+            @click="showImage('four')"
+          >
             <img
               src="/images/image-product-4-thumbnail.jpg"
               alt="One beige sneaker on a two rocks"
@@ -97,6 +108,13 @@
   </div>
 </template>
 
+<script setup>
+
+const isImageDisplayed = ref('one')
+const showImage = (arg) => isImageDisplayed.value = arg
+
+</script>
+
 <style scoped>
 @media screen and (max-width: 768px) {
 
@@ -112,10 +130,6 @@
   .gallery__large-image {
     max-height: 400px;
     object-fit: cover;
-  }
-
-  .gallery__ld-image {
-    display: none;
   }
 
   .gallery__small {
@@ -141,9 +155,6 @@
     border: none;
 
   }
-
-
-
 }
 
 @media screen and (min-width: 400px) and (max-width: 600px) {
@@ -184,14 +195,8 @@
     grid-row: 1 / 2;
   }
 
-  .gallery__large,
   .gallery__btns {
     display: none;
-  }
-
-  .gallery__ld-image {
-    height: 100%;
-    object-fit: cover;
   }
 
   .gallery__small {
