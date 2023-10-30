@@ -60,24 +60,31 @@
         </div>
 
         <!-- Thumbnails  -->
-        <!-- TODO: Hide on mobile devices -->
         <div class="gallery__small">
-          <img
-            src="/images/image-product-1-thumbnail.jpg"
-            alt="Two beige sneakers"
-          >
-          <img
-            src="/images/image-product-2-thumbnail.jpg"
-            alt="Two beige sneakers, one sneaker on a rock"
-          >
-          <img
-            src="/images/image-product-3-thumbnail.jpg"
-            alt="One beige sneaker on a two rocks"
-          >
-          <img
-            src="/images/image-product-4-thumbnail.jpg"
-            alt="One beige sneaker on a two rocks"
-          >
+          <button class="gallery__thumbnail-button">
+            <img
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="Two beige sneakers"
+            >
+          </button>
+          <button class="gallery__thumbnail-button">
+            <img
+              src="/images/image-product-2-thumbnail.jpg"
+              alt="Two beige sneakers, one sneaker on a rock"
+            >
+          </button>
+          <button class="gallery__thumbnail-button">
+            <img
+              src="/images/image-product-3-thumbnail.jpg"
+              alt="One beige sneaker on a two rocks"
+            >
+          </button>
+          <button class="gallery__thumbnail-button">
+            <img
+              src="/images/image-product-4-thumbnail.jpg"
+              alt="One beige sneaker on a two rocks"
+            >
+          </button>
 
         </div>
       </div>
@@ -155,7 +162,7 @@
 
 @media screen and (min-width: 769px) {
   img {
-    border-radius: 10px;
+    border-radius: var(--border-radius-soft-10);
   }
 
   .main-container {
@@ -167,7 +174,7 @@
 
   .gallery {
     display: grid;
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: 1fr 80px;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
   }
@@ -188,12 +195,31 @@
   }
 
   .gallery__small {
-    display: inline-grid;
+    display: grid;
     grid-auto-flow: column;
     gap: var(--spacing-600);
 
     grid-column: 1 / 5;
     grid-row: 2 / 3;
+
+  }
+
+  .gallery__thumbnail-button {
+    border-radius: 10px;
+  }
+
+  .gallery__thumbnail-button img {
+    height: 100%;
+
+  }
+
+  .gallery__thumbnail-button:hover img {
+    filter: opacity(0.5);
+  }
+
+  .gallery__thumbnail-button:active,
+  .gallery__thumbnail-button:focus {
+    outline: 2px solid var(--orange);
 
   }
 
