@@ -3,104 +3,33 @@
     <TheHeader />
 
     <main class="main-container">
-      <!-- Product Gallery -->
-      <div class="gallery">
 
-        <div class="gallery__container">
-          <!-- Large image gallery -->
-          <div class="gallery__large">
-            <img
-              v-if="isImageDisplayed === 'one'"
-              class="gallery__large-image"
-              src="/images/image-product-1.jpg"
-              alt="Two beige sneakers"
-            >
-            <img
-              v-if="isImageDisplayed === 'two'"
-              class="gallery__large-image"
-              src="/images/image-product-2.jpg"
-              alt="Two beige sneakers, one sneaker on a rock"
-            >
-            <img
-              v-if="isImageDisplayed === 'three'"
-              class="gallery__large-image"
-              src="/images/image-product-3.jpg"
-              alt="One beige sneaker on a two rocks"
-            >
-            <img
-              v-if="isImageDisplayed === 'four'"
-              class="gallery__large-image"
-              src="/images/image-product-4.jpg"
-              alt="One beige sneaker on a two rocks"
-            >
-
-          </div>
-          <div class="gallery__btns">
-            <button
-              type="button"
-              class="button-gallery button-gallery--previous"
-            >
-              <img
-                src="/images/icon-previous.svg"
-                alt="Button for previous images"
-              >
-            </button>
-            <button
-              type="button"
-              class="button-gallery button-gallery--next"
-            >
-              <img
-                src="/images/icon-next.svg"
-                alt="Button for next images"
-              >
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Thumbnails  -->
-        <div class="gallery__small">
-          <button
-            class="gallery__thumbnail-button"
-            @click="showImage('one')"
-          >
-            <img
-              src="/images/image-product-1-thumbnail.jpg"
-              alt="Two beige sneakers"
-            >
-          </button>
-          <button
-            class="gallery__thumbnail-button"
-            @click="showImage('two')"
-          >
-            <img
-              src="/images/image-product-2-thumbnail.jpg"
-              alt="Two beige sneakers, one sneaker on a rock"
-            >
-          </button>
-          <button
-            class="gallery__thumbnail-button"
-            @click="showImage('three')"
-          >
-            <img
-              src="/images/image-product-3-thumbnail.jpg"
-              alt="One beige sneaker on a two rocks"
-            >
-          </button>
-          <button
-            class="gallery__thumbnail-button"
-            @click="showImage('four')"
-          >
-            <img
-              src="/images/image-product-4-thumbnail.jpg"
-              alt="One beige sneaker on a two rocks"
-            >
-          </button>
-
-        </div>
-      </div>
-
+      <ProductGallery @show-gallery="showGallery" />
       <ProductDetails />
+
+      <div
+        class="lightbox-gallery-container"
+        v-if="lightboxGalleryIsOpen"
+      >
+        <button
+          type="button"
+          class="close-gallery-btn"
+          @click="closeGallery"
+        >
+          <svg
+            width="14"
+            height="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+              fill="#fff"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <ProductGallery class="lightbox-gallery" />
+      </div>
 
 
     </main>
@@ -110,72 +39,15 @@
 
 <script setup>
 
-const isImageDisplayed = ref('one')
-const showImage = (arg) => isImageDisplayed.value = arg
+const lightboxGalleryIsOpen = ref(false)
+const showGallery = () => lightboxGalleryIsOpen.value = true
+const closeGallery = () => lightboxGalleryIsOpen.value = false
+
 
 </script>
 
-<style scoped>
-@media screen and (max-width: 768px) {
-
-  .gallery__container {
-    position: relative;
-  }
-
-  .gallery__large {
-    display: flex;
-    overflow: hidden;
-  }
-
-  .gallery__large-image {
-    max-height: 400px;
-    object-fit: cover;
-  }
-
-  .gallery__small {
-    display: none;
-  }
-
-  .gallery__btns {
-    position: absolute;
-    top: 50%;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-
-  .button-gallery {
-    display: grid;
-    place-items: center;
-    height: 50px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--white);
-    border: none;
-
-  }
-}
-
-@media screen and (min-width: 400px) and (max-width: 600px) {
-  .gallery__large-image {
-    aspect-ratio: 3 / 2;
-  }
-
-}
-
-@media screen and (min-width: 601px) and (max-width: 768px) {
-  .gallery__large-image {
-    aspect-ratio: 3 / 1.5;
-  }
-
-}
-
+<style>
 @media screen and (min-width: 769px) {
-  img {
-    border-radius: var(--border-radius-soft-10);
-  }
-
   .main-container {
     display: flex;
     gap: 5rem;
@@ -183,49 +55,30 @@ const showImage = (arg) => isImageDisplayed.value = arg
     padding-block-start: 12rem;
   }
 
-  .gallery {
+  .lightbox-gallery-container {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
     display: grid;
-    grid-template-rows: 1fr 80px;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr 500px 1fr;
+    grid-template-rows: 1fr 580px 1fr;
+    background-color: var(--background);
+
   }
 
-  .gallery__container {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-  }
-
-  .gallery__btns {
-    display: none;
-  }
-
-  .gallery__small {
-    display: grid;
-    grid-auto-flow: column;
-    gap: var(--spacing-600);
-
-    grid-column: 1 / 5;
+  .lightbox-gallery {
+    grid-column: 2 / 3;
     grid-row: 2 / 3;
-
   }
 
-  .gallery__thumbnail-button {
-    border-radius: 10px;
+  .close-gallery-btn {
+    grid-column: 3 / 4;
+    margin-inline-start: -38px;
+    margin-block-start: 45px;
   }
 
-  .gallery__thumbnail-button img {
-    height: 100%;
-
-  }
-
-  .gallery__thumbnail-button:hover img {
-    filter: opacity(0.5);
-  }
-
-  .gallery__thumbnail-button:active,
-  .gallery__thumbnail-button:focus {
-    outline: 2px solid var(--orange);
-
+  .close-gallery-btn:hover svg path {
+    fill: var(--orange);
   }
 
 }
