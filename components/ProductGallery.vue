@@ -123,6 +123,17 @@ const showImage = (arg) => isImageDisplayed.value = arg
 </script>
 
 <style scoped>
+.button-gallery {
+    display: grid;
+    place-items: center;
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--white);
+    border: none;
+
+}
+
 @media screen and (max-width: 768px) {
 
     .gallery__container {
@@ -136,9 +147,9 @@ const showImage = (arg) => isImageDisplayed.value = arg
 
     .gallery__large-image {
         max-height: 400px;
+        width: 100vw;
         object-fit: cover;
     }
-
 
     .gallery__small {
         display: none;
@@ -151,30 +162,6 @@ const showImage = (arg) => isImageDisplayed.value = arg
         display: flex;
         justify-content: space-between;
         padding: 1rem;
-    }
-
-    .button-gallery {
-        display: grid;
-        place-items: center;
-        height: 50px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--white);
-        border: none;
-
-    }
-}
-
-@media screen and (min-width: 400px) and (max-width: 600px) {
-    .gallery__large-image {
-        aspect-ratio: 3 / 2;
-    }
-
-}
-
-@media screen and (min-width: 601px) and (max-width: 768px) {
-    .gallery__large-image {
-        aspect-ratio: 3 / 1.5;
     }
 
 }
@@ -246,17 +233,6 @@ const showImage = (arg) => isImageDisplayed.value = arg
         width: 575px;
         display: flex;
         justify-content: space-between;
-
-    }
-
-    .lightbox-gallery .button-gallery {
-        display: grid;
-        place-items: center;
-        height: 50px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--white);
-        border: none;
 
     }
 
