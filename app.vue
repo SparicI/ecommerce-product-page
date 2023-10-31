@@ -67,13 +67,15 @@ const closeGallery = () => lightboxGalleryIsOpen.value = false
   }
 
   .lightbox-gallery {
+    grid-template-columns: 450px !important;
+    grid-template-rows: 1fr 90px !important;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
   }
 
   .close-gallery-btn {
     grid-column: 3 / 4;
-    margin-inline-start: -38px;
+    margin-inline-start: 10px;
     margin-block-start: 45px;
   }
 

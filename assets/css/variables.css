@@ -49,7 +49,7 @@
 
     /* Other */
     --border-radius-soft-5: 5px;
-    --border-radius-soft-10: 5px;
+    --border-radius-soft-10: 10px;
 
     --box-shadow-base: 2px 12px 20px rgba(0 0 0 / 0.3);
     --box-shadow-orange: 2px 30px 20px var(--pale-orange);

@@ -191,7 +191,6 @@ const showImage = (arg) => isImageDisplayed.value = arg
         gap: 1.5rem;
     }
 
-
     .gallery__container {
         grid-column: 1 / 5;
         grid-row: 1 / 2;
@@ -211,17 +210,8 @@ const showImage = (arg) => isImageDisplayed.value = arg
 
     }
 
-    .gallery__large {
-        height: 400px;
-        width: 400px;
-    }
-
     .gallery__thumbnail-button {
-        border-radius: 10px;
-    }
-
-    .gallery__thumbnail-button img {
-        height: 100%;
+        border-radius: var(--border-radius-soft-10);
     }
 
     .gallery__thumbnail-button:hover img {
@@ -239,12 +229,9 @@ const showImage = (arg) => isImageDisplayed.value = arg
         position: relative;
     }
 
-    .lightbox-gallery .gallery__large img {
-        max-width: 450px;
-    }
-
     .lightbox-gallery .gallery__small {
-        justify-items: center;
+        gap: var(--spacing-400);
+        justify-content: center;
     }
 
     .lightbox-gallery .gallery__small img {
@@ -256,7 +243,7 @@ const showImage = (arg) => isImageDisplayed.value = arg
         position: absolute;
         top: 43%;
         left: -25px;
-        width: 500px;
+        width: 575px;
         display: flex;
         justify-content: space-between;
 
