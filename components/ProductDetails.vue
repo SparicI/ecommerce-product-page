@@ -155,6 +155,10 @@ svg:hover use {
         align-items: flex-start;
     }
 
+}
+
+@media screen and (min-width: 1024px) {
+
     .product__controls {
         display: grid;
         grid-template-columns: 1fr 2fr;
