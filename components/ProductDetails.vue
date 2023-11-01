@@ -77,7 +77,7 @@
             >
                 <img
                     src="/images/icon-cart-white.svg"
-                    alt="Add to cart"
+                    alt=""
                 >
                 Add to cart
             </button>

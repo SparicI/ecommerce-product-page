@@ -7,6 +7,7 @@
                 <button
                     class="gallery__large-image-button"
                     @click="$emit('showGallery')"
+                    aria-label="Open lightbox gallery"
                 >
                     <img
                         v-if="isImageDisplayed === 'one'"
@@ -18,6 +19,7 @@
                 <button
                     class="gallery__large-image-button"
                     @click="$emit('showGallery')"
+                    aria-label="Open lightbox gallery"
                 >
                     <img
                         v-if="isImageDisplayed === 'two'"
@@ -29,6 +31,7 @@
                 <button
                     class="gallery__large-image-button"
                     @click="$emit('showGallery')"
+                    aria-label="Open lightbox gallery"
                 >
                     <img
                         v-if="isImageDisplayed === 'three'"
@@ -40,6 +43,7 @@
                 <button
                     class="gallery__large-image-button"
                     @click="$emit('showGallery')"
+                    aria-label="Open lightbox gallery"
                 >
                     <img
                         v-if="isImageDisplayed === 'four'"
@@ -78,6 +82,7 @@
             <button
                 class="gallery__thumbnail-button"
                 @click="showImage('one')"
+                aria-label="Show larger version of thumbnail"
             >
                 <img
                     src="/images/image-product-1-thumbnail.jpg"
@@ -87,6 +92,7 @@
             <button
                 class="gallery__thumbnail-button"
                 @click="showImage('two')"
+                aria-label="Show larger version of thumbnail"
             >
                 <img
                     src="/images/image-product-2-thumbnail.jpg"
@@ -96,6 +102,7 @@
             <button
                 class="gallery__thumbnail-button"
                 @click="showImage('three')"
+                aria-label="Show larger version of thumbnail"
             >
                 <img
                     src="/images/image-product-3-thumbnail.jpg"
@@ -105,6 +112,7 @@
             <button
                 class="gallery__thumbnail-button"
                 @click="showImage('four')"
+                aria-label="Show larger version of thumbnail"
             >
                 <img
                     src="/images/image-product-4-thumbnail.jpg"
